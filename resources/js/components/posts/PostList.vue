@@ -23,6 +23,8 @@
                     </div>
                 </li>
             </ul>
+
+            <Pagination :pagination="pagination"/>
         </div>
     </div>
 </template>
@@ -30,13 +32,15 @@
 <script>
     import axios from 'axios';
     import Loader from '../Loader.vue';
-import Loader1 from '../Loader.vue';
+    import Pagination from '../Pagination.vue';
+undefined
 
     export default {
         name: 'PostList',
         components: {
-            Loader
-        },
+    Loader,
+    Pagination
+},
         data() {
             return {
                 posts: [],
@@ -49,7 +53,25 @@ import Loader1 from '../Loader.vue';
                 axios.get("http://localhost:8000/api/posts")
                     .then( (res) => {
                         console.log(res.data);
-                        this.posts = res.data.data;
+
+                        const {
+                            data,
+                            current_page,
+                            last_page
+                        } = res.data;
+
+                        console.log(data);
+                        console.log(current_page);
+                        console.log(last_page);
+
+                        this.posts = data;
+
+                        this.pagination = {
+                            currentPage: current_page,
+                            lastPage: last_page
+                        }
+
+
                     }).then( () => {
                         console.log('Terminato il caricamento dei posts');
                         this.isLoading = false;
