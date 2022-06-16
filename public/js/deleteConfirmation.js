@@ -116,7 +116,7 @@ deleteForms.forEach(function (form) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\franc\repo\laravel-many-to-many-2\resources\js\deleteConfirmation.js */"./resources/js/deleteConfirmation.js");
+module.exports = __webpack_require__(/*! C:\Users\franc\repo\laravel-boolpres\resources\js\deleteConfirmation.js */"./resources/js/deleteConfirmation.js");
 
 
 /***/ })
