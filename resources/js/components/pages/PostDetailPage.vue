@@ -16,7 +16,7 @@ export default {
     },
     methods: {
         getPosts() {
-            axios.get(`http://localhost:8000/api/posts/${ this.$route.params.id }`)
+            axios.get(`http://localhost:8000/api/posts/${ this.$route.params.slug }`)
                  .then( (res) => {
                     console.log(res.data);
 
@@ -26,7 +26,7 @@ export default {
     },
     mounted() {
         this.getPosts();
-        console.log( this.$route.params.id )
+        console.log( this.$route.params.slug )
     }
 
 }

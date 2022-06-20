@@ -1,7 +1,8 @@
 <template>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <li v-if="pagination.currentPage > 1" class="page-item" @click="$emit( 'on-page-change', pagination.currentPage - 1 )">
+            <li v-if="pagination.currentPage > 1" class="page-item"
+                    @click="$emit( 'on-page-change', pagination.currentPage - 1 )">
                 <span class="page-link" >Previous</span>
             </li>
 
@@ -15,7 +16,8 @@
                 <span class="page-link"> {{ page }} </span>
             </li>
 
-            <li v-if="pagination.lastPage > pagination.currentPage" class="page-item" @click="$emit( 'on-page-change', pagination.currentPage + 1 )">
+            <li v-if="pagination.lastPage > pagination.currentPage" class="page-item"
+                    @click="$emit( 'on-page-change', pagination.currentPage + 1 )">
                 <span class="page-link" >Next</span>
             </li>
         </ul>

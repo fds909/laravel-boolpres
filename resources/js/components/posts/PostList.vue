@@ -5,7 +5,7 @@
 
         <div v-if="posts.length">
             <h2 class="text-center">Posts</h2>
-            <ul class="pl-0">
+            <ul>
                 <li v-for="post in posts" :key="post.id">
                     <div class="card mb-3 text-center">
                         <h5 class="card-header">{{post.title}}</h5>
@@ -18,7 +18,7 @@
                                 </span>
                             </h5>
                             <p class="card-text">{{ post.content }}</p>
-                            <router-link :to="{ name: 'post-detail', params: { id: post.id } }"
+                            <router-link :to="{ name: 'post-detail', params: { slug: post.slug } }"
                                          class="btn btn-primary">Details</router-link>
                         </div>
                     </div>
@@ -89,5 +89,6 @@ undefined
 <style scoped>
     ul {
         list-style-type: none;
+        padding-left: 0;
     }
 </style>

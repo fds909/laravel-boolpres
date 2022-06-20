@@ -2637,6 +2637,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Pagination',
   props: ['pagination']
@@ -2741,7 +2743,7 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://localhost:8000/api/posts/".concat(this.$route.params.id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://localhost:8000/api/posts/".concat(this.$route.params.slug)).then(function (res) {
         console.log(res.data);
         _this.post = res.data;
       });
@@ -2749,7 +2751,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPosts();
-    console.log(this.$route.params.id);
+    console.log(this.$route.params.slug);
   }
 });
 
@@ -4844,7 +4846,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul[data-v-35b65645] {\n    list-style-type: none;\n}\n", ""]);
+exports.push([module.i, "\nul[data-v-35b65645] {\n    list-style-type: none;\n    padding-left: 0;\n}\n", ""]);
 
 // exports
 
@@ -6365,7 +6367,6 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "ul",
-                { staticClass: "pl-0" },
                 _vm._l(_vm.posts, function (post) {
                   return _c("li", { key: post.id }, [
                     _c("div", { staticClass: "card mb-3 text-center" }, [
@@ -6422,7 +6423,7 @@ var render = function () {
                               attrs: {
                                 to: {
                                   name: "post-detail",
-                                  params: { id: post.id },
+                                  params: { slug: post.slug },
                                 },
                               },
                             },
@@ -22366,7 +22367,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _components_pages_ContactPage_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     name: 'contacts'
   }, {
-    path: '/posts/:id',
+    path: '/posts/:slug',
     component: _components_pages_PostDetailPage_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     name: 'post-detail'
   }, {
