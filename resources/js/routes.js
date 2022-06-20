@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 import HomePage from './components/pages/HomePage.vue';
 import ContactPage from './components/pages/ContactPage.vue';
 import NotFoundPage from './components/pages/NotFoundPage.vue';
-import PostDetailPage from './components/pages/PostDetailPage.vue'
+import PostDetailPage from './components/pages/PostDetailPage.vue';
 
 //Inizializzare il router
 const router = new VueRouter({
