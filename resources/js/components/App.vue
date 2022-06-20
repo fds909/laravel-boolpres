@@ -4,7 +4,7 @@
 
         <main>
             <div class="container">
-                <PostList/>
+                <router-view></router-view>
             </div>
         </main>
     </div>

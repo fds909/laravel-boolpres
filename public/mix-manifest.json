@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/deleteConfirmation.js": "/js/deleteConfirmation.js",
-    "/js/front.js": "/js/front.js"
+    "/js/front.js": "/js/front.js",
+    "/js/routes.js": "/js/routes.js"
 }

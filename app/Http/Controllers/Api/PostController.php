@@ -51,7 +51,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::with( 'Author','tags' )->find($id);
+
+        return response()->json( $post );
     }
 
     /**

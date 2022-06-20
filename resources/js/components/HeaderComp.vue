@@ -5,16 +5,15 @@
 
                 <div class="container">
                     
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <router-link class="navbar-brand" to="/">Boolpress</router-link>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link" href="#">Features</a>
-                            <a class="nav-item nav-link" href="#">Pricing</a>
+                            <router-link class="nav-item nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
+                            <router-link class="nav-item nav-link" to="/contacts">Contacts</router-link>
                         </div>
                     </div>
 
@@ -30,3 +29,9 @@
         name: "HeaderComp"
     }
 </script>
+
+<style scoped>
+    .active {
+        background-color: rgb(32, 32, 32);
+    }
+</style>

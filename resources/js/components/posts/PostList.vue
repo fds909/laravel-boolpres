@@ -5,7 +5,7 @@
 
         <div v-if="posts.length">
             <h2 class="text-center">Posts</h2>
-            <ul>
+            <ul class="pl-0">
                 <li v-for="post in posts" :key="post.id">
                     <div class="card mb-3 text-center">
                         <h5 class="card-header">{{post.title}}</h5>
@@ -18,13 +18,14 @@
                                 </span>
                             </h5>
                             <p class="card-text">{{ post.content }}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <router-link :to="{ name: 'post-detail', params: { id: post.id } }"
+                                         class="btn btn-primary">Details</router-link>
                         </div>
                     </div>
                 </li>
             </ul>
 
-            <Pagination :pagination="pagination"/>
+            <Pagination :pagination="pagination" @on-page-change="getPosts"/>
         </div>
     </div>
 </template>
@@ -49,8 +50,8 @@ undefined
             }
         },
         methods: {
-            getPosts() {
-                axios.get("http://localhost:8000/api/posts")
+            getPosts(page = 1) {
+                axios.get("http://localhost:8000/api/posts?page=" + page)
                     .then( (res) => {
                         console.log(res.data);
 
